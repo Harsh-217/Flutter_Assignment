@@ -119,12 +119,15 @@ class CartScreenState extends State<CartScreen> {
                   ),
                 ],
               ),
-      bottomNavigationBar: BottomAppBar(
-        child: ElevatedButton(
-          onPressed: _checkout,
-          child: const Text("Checkout"),
-        ),
-      ),
+      bottomNavigationBar:
+          _cartItems.isEmpty
+              ? null
+              : BottomAppBar(
+                child: ElevatedButton(
+                  onPressed: _checkout,
+                  child: const Text("Checkout"),
+                ),
+              ),
     );
   }
 }
